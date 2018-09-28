@@ -42,5 +42,6 @@ class InteractiveRecord
     SQL
 
     DB[:conn].execute(sql)
+    self.id = DB[:conn].execute("SELECT last_insert_rowid")[0][0]
   end
 end
