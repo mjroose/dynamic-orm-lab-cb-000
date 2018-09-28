@@ -58,7 +58,7 @@ class InteractiveRecord
   def self.find_by(options)
         binding.pry
     column = options.keys[0]
-    value = options.values[0].is_a? String ? "'#{options.values[0]}'" : options.values[0]
+    value = options.values[0].is_a? String ? '"#{options.values[0]}"' : options.values[0]
     sql = <<-SQL
       SELECT * FROM #{table_name}
       WHERE #{column} = #{value};
