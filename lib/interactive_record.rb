@@ -56,6 +56,8 @@ class InteractiveRecord
   end
 
   def self.find_by(options)
+    column = options.keys[0]
+    value = options.values[0].is_a? Numeric ? options.values[0] : '#{options.values[0]}'
     sql = <<-SQL
       SELECT * FROM #{table_name}
       WHERE #{options.keys[0]} = '#{options.values[0]}';
