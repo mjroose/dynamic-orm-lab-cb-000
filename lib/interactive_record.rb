@@ -15,6 +15,7 @@ class InteractiveRecord
   end
 
   def initialize(options={})
+    binding.pry
     options.each do |prop, value|
       if self[prop.to_sym] != nil
         self.send("#{prop}=", value)
