@@ -11,7 +11,8 @@ class InteractiveRecord
 
     column_names = table_info.collect do |column|
       column[:name]
+      binding.pry
     end.compact
-    binding.pry
+
   end
 end
