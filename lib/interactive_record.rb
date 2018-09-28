@@ -13,4 +13,10 @@ class InteractiveRecord
       column["name"]
     end.compact
   end
+
+  def initialize(options={})
+    options.each do |prop, value|
+      self.send("#{prop}=", value)
+    end
+  end
 end
