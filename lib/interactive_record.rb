@@ -11,6 +11,6 @@ class InteractiveRecord
 
     column_names = table_info.collect do |column|
       column["name"]
-    end
+    end.compact
   end
 end
