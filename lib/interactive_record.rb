@@ -62,11 +62,12 @@ class InteractiveRecord
     else
       value = options.values[0]
     end
+
     sql = <<-SQL
       SELECT * FROM #{table_name}
       WHERE #{column} = #{value};
     SQL
-    
+
     DB[:conn].execute(sql)
   end
 end
