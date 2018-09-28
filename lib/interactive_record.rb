@@ -16,7 +16,9 @@ class InteractiveRecord
 
   def initialize(options={})
     options.each do |prop, value|
-      self.send("#{prop}=", value) unless self.send("#{prop}") == nil
+      if self.prop != nil
+        self.send("#{prop}=", value)
+      end
     end
   end
 end
