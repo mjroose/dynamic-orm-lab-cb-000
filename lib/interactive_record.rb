@@ -51,7 +51,7 @@ class InteractiveRecord
       SELECT * FROM #{table_name}
       WHERE name = '#{name}';
     SQL
-    binding.pry
+
     DB[:conn].execute(sql)
   end
 end
