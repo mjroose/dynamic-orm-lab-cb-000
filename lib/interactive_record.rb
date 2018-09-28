@@ -60,7 +60,7 @@ class InteractiveRecord
       SELECT * FROM #{table_name}
       WHERE #{options.keys[0]} = '#{options.values[0]}';
     SQL
-
+    binding.pry
     DB[:conn].execute(sql)
   end
 end
