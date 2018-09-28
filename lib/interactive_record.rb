@@ -66,7 +66,7 @@ class InteractiveRecord
       SELECT * FROM #{table_name}
       WHERE #{column} = #{value};
     SQL
-    binding.pry
+    
     DB[:conn].execute(sql)
   end
 end
