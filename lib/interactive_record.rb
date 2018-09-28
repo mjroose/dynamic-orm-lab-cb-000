@@ -56,7 +56,6 @@ class InteractiveRecord
   end
 
   def self.find_by(options)
-        binding.pry
     column = options.keys[0]
     if options.values[0].is_a? String
       value = '"#{options.values[0]}"'
