@@ -30,6 +30,8 @@ class InteractiveRecord
   end
 
   def values_for_insert
-
+    self.class.column_names.collect do |col_name|
+      send(col_name).nil? ? nil : "'#{send(col_name)}'"
+    end
   end
 end
